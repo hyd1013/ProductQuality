@@ -6,7 +6,7 @@ spring:
       #jdbc:mysql:// == 协议头
       # ip地址+端口号
       # 数据库名称
-    url: jdbc:mysql://127.0.0.1:3306/product
+    url: jdbc:mysql://127.0.0.1:3306/productqualitymanager
     username: root
     password: 1234
 mybatis:
