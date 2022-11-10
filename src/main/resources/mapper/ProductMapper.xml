@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.mapper.ProductMapper">
+
+    <select id="queryAll" resultType="cn.bdqn.model.dto.ProductDto">
+        SELECT
+            products.*,
+            qualities.score
+        FROM
+            `products`
+                LEFT JOIN qualities ON products.id = qualities.productId
+        where products.productName like concat('%',#{conditions},'%')
+    </select>
+
+    <delete id="delete">
+        delete from products where id = #{id}
+    </delete>
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO `product`.`products` (`productName`, `productDate`, `productSum`, `productDesc`, `productPrice` )
+        VALUES
+            (#{productName},#{productDate},#{productSum},#{productDesc},#{productPrice});
+    </insert>
+
+    <delete id="addQue">
+        INSERT INTO `product`.`qualities` (`productId`) VALUES (#{id});
+
+    </delete>
+</mapper>

@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    # 链接驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据链接路径
+      #jdbc:mysql:// == 协议头
+      # ip地址+端口号
+      # 数据库名称
+    url: jdbc:mysql://127.0.0.1:3306/product
+    username: root
+    password: 1234
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
