@@ -26,7 +26,7 @@ public class ProductController {
     ProductService productService;
 
     //当使用@Controller注解时，controller默认返回视图名称，
-    // 当方法返回值为String类型时，返回值为视图名称
+    // 当方法返回值为String类型
 
     @GetMapping("/")
     public String queryAll(
